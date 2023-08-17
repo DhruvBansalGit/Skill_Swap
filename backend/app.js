@@ -42,6 +42,10 @@ app.get('/requests',(req,res)=>{
     res.status(200).sendFile(__dirname.split('backend')[0] + 'request.html')
 
 })
+app.get('/createcard',(req,res)=>{
+    res.status(200).sendFile(__dirname.split('backend')[0] + 'createcard.html')
+
+})
 
 app.listen(3000,()=>{
     console.log("listing to the port")
