@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Info</title>
     <link rel="stylesheet" href="personal.css">
 </head>
@@ -36,7 +36,7 @@
     <h2 class="personalInfoHead">Personal Info</h2>
 </div>
     <hr>
-    <form action="./professional.html" method="post">
+    <form action="./professional">
     <div class="fullnameContainer">
         <div class="fullnameHead">
             <h2 class="fullname">Full Name</h2><span class="redstar">*</span><span class="Private">Private</span>
@@ -118,7 +118,7 @@
         </div>
     </div>
     <div class="button">
-        <button type="submit" class="continueButton" disabled ><a href="./professional.html">Continue</a></button>
+        <button type="submit" class="continueButton" disabled >Continue</button>
     </div>
 </form>
     <div class="footer2">
@@ -189,12 +189,10 @@
         })
     const continueContainer = document.querySelector(".button");
     const continuebtn = document.querySelector(".continueButton");
+    
     continueContainer.addEventListener('click',function(e){
-        if(!firstname.value && !lastname.value && !username.value && !description.value && !file.value && !phone.value){
-            alert("Please fill all the fields")
-        }
-            continuebtn.style.backgroundColor = "#14A800"
-            continuebtn.disabled = "false";
+        if(firstname.value && lastname.value && username.value && description.value && file.value && phone.value){
+            continuebtn.disabled = false;
             firstname.value = ""
             lastname.value = "" 
             username.value = "" 
@@ -203,7 +201,9 @@
             phone.value=''
             addButtonContainer.innerHTML = "";
             language.value = "Select";
-
+        }
+        alert("Please fill all the fields")
+          
         
     })
 </script>
