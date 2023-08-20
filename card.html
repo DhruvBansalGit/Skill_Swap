@@ -10,7 +10,138 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css">
-
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ::-webkit-scrollbar{
+        width: 10px;
+        background-color:#ffffff;
+      }
+     
+      ::-webkit-scrollbar-thumb{
+        border-radius: 25px;
+        width: 5px;
+        border:3px solid #ffffff ;
+        background: #68e304;
+      }
+      ::-webkit-scrollbar-thumb:hover{
+        /* width: 10px; */
+        border: 0px solid;
+        /* background: gray; */
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        filter: blur(8px);
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 100;
+      }
+      .requestContainer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: white;
+        height: 80vh;
+        width: 80vw;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        overflow:auto;
+      }
+      .requestCard  {
+        display: flex;
+        border: 2px solid black;
+        margin: 25px 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 20vh;
+        padding: 25px;
+      }
+      .requestCard  img{
+        border-radius: 50%;
+        border: 2px solid green;
+        margin-right: 25px;
+      }
+      .descriptionContainer{
+        max-width: 50%;
+      }
+    .descriptionContainer .naam{
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .descriptionContainer .desc{
+        font-size: 15px;
+        text-align: justify;
+        margin-bottom: 5px;
+      }
+      .descriptionContainer h5{
+        font-size: 17px;
+        font-weight: 600;
+      }
+      .descriptionContainer span{
+        font-weight: 400;
+      }
+      .requestButtons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+      }
+      .requestButtons button{
+        padding: 8px;
+        width: 120px;
+        margin-left: 25px;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .requestButtons button:nth-child(1){
+        background: #94ec4b;
+      }
+      .requestButtons button:nth-child(2){
+        background: #ff0000;
+      }
+      .hidden{
+        display: none;
+      }
+      
+      @media screen and (max-width:872px){
+        .requestCard {
+            overflow: auto;
+        }
+        .requestCard img{
+            /* overflow: auto; */
+            transform: scale(0.6);
+            /* transform: scaleX(0.5); */
+        }
+      }
+      @media screen and (max-width:522px){
+        .descriptionContainer .naam{
+            font-size: 15px;
+        }
+        .requestCard {
+            padding: 5px;
+        }
+        .requestCard  img{
+            margin-right: 0px;
+        }
+        .descriptionContainer{
+            margin-right: 18px;
+        }
+      }
+    </style>
     <title>Skill Swap</title>
 </head>
 <body>
@@ -19,7 +150,7 @@
             <img src="images/Skill_Swap.png" alt="Logo">
             <ul class="profile-nav-titles">
                 <li><a class="nav__link" href="/message">Messages</a></li>
-                <li><a class="nav__link" href="/requests">Request Recieved</a></li>
+                <li><a class="requestRecieved">Request Recieved</a></li>
                 <li><a class="nav__link" href="#">Request Send</a></li>
             </ul>
         </div>
@@ -378,6 +509,105 @@
             
         </div>
     </div>
+    <div class="nav__link">Recieved</div>
+    <div class="requestContainer hidden">
+      <div class="requestCard  card--1">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/019/900/322/small/happy-young-cute-illustration-face-profile-png.png"
+          alt="bache ki photo"
+        />
+        <div class="descriptionContainer">
+          <h1 class="naam">Sameer Gupta</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint nemo
+            pariatur sit. Voluptate atque ullam animi pariatur omnis?
+          </p>
+          <h5>Skill want to learn: <span>Html</span></h5>
+          <h5>Skill want to teach: <span>C++</span></h5>
+        </div>
+        <div class="requestButtons">
+            <button type="submit">Accept</button>
+            <button type="submit">Reject</button>
+          </div>
+      </div>
+      <div class="requestCard  card--1">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/019/900/322/small/happy-young-cute-illustration-face-profile-png.png"
+          alt="bache ki photo"
+        />
+        <div class="descriptionContainer">
+          <h1 class="naam">Sameer Gupta</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint nemo
+            pariatur sit. Voluptate atque ullam animi pariatur omnis?
+          </p>
+          <h5>Learn: <span>Html</span></h5>
+          <h5>Teach: <span>C++</span></h5>
+        </div>
+        <div class="requestButtons">
+            <button type="submit">Accept</button>
+            <button type="submit">Reject</button>
+          </div>
+      </div>
+      <div class="requestCard  card--1">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/019/900/322/small/happy-young-cute-illustration-face-profile-png.png"
+          alt="bache ki photo"
+        />
+        <div class="descriptionContainer">
+          <h1 class="naam">Sameer Gupta</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint nemo
+            pariatur sit. Voluptate atque ullam animi pariatur omnis?
+          </p>
+          <h5>Skill want to learn: <span>Html</span></h5>
+          <h5>Skill want to teach: <span>C++</span></h5>
+        </div>
+        <div class="requestButtons">
+            <button type="submit">Accept</button>
+            <button type="submit">Reject</button>
+          </div>
+      </div>
+      <div class="requestCard  card--1">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/019/900/322/small/happy-young-cute-illustration-face-profile-png.png"
+          alt="bache ki photo"
+        />
+        <div class="descriptionContainer">
+          <h1 class="naam">Sameer Gupta</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint nemo
+            pariatur sit. Voluptate atque ullam animi pariatur omnis?
+          </p>
+          <h5>Skill want to learn: <span>Html</span></h5>
+          <h5>Skill want to teach: <span>C++</span></h5>
+        </div>
+        <div class="requestButtons">
+            <button type="submit">Accept</button>
+            <button type="submit">Reject</button>
+          </div>
+      </div>
+      <div class="requestCard  card--1">
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/019/900/322/small/happy-young-cute-illustration-face-profile-png.png"
+          alt="bache ki photo"
+        />
+        <div class="descriptionContainer">
+          <h1 class="naam">Sameer Gupta</h1>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint nemo
+            pariatur sit. Voluptate atque ullam animi pariatur omnis?
+          </p>
+          <h5>Skill want to learn: <span>Html</span></h5>
+          <h5>Skill want to teach: <span>C++</span></h5>
+        </div>
+        <div class="requestButtons">
+            <button type="submit">Accept</button>
+            <button type="submit">Reject</button>
+          </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
 </body>
 <script>
     const profimg = document.querySelector(".profile-image");
@@ -404,12 +634,20 @@ nav.addEventListener("mouseover", (e) => handlehover(e, 0.5));
 
 nav.addEventListener("mouseout", (e) => handlehover(e, 1));
 
-// document.addEventListener('click',(e)=>{
-//     e.preventDefault();
-//     if(!e.target.classList.contains("profile-image")){
-//         subMenu.classList.remove("open-menu");
-//     }
-// })
+const overlay = document.querySelector('.overlay');
+const requestContainer= document.querySelector('.requestContainer');
+const recieved = document.querySelector(".requestRecieved");
+      recieved.addEventListener('click',(e)=>{
+        e.preventDefault();
+        overlay.classList.toggle('hidden')
+        requestContainer.classList.toggle('hidden');
+      })
+      overlay.addEventListener('click',()=>{
+        overlay.classList.toggle('hidden')
+        requestContainer.classList.toggle('hidden');
+      })
+
+
 
 </script>
 </html>
